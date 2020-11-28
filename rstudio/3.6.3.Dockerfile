@@ -93,7 +93,8 @@ COPY add_shiny.sh /etc/cont-init.d/add
 COPY disable_auth_rserver.conf /etc/rstudio/disable_auth_rserver.conf
 COPY pam-helper.sh /usr/lib/rstudio-server/bin/pam-helper
 
-EXPOSE 8080
+ENV PORT 8080
+ENV HOST 0.0.0.0
 
 ## automatically link a shared volume for kitematic users
 VOLUME /home/rstudio/kitematic
